@@ -41,8 +41,14 @@ console.log(apartment);
     //create a variable called twoVeggies and set it equal to slicing
     // the veggies array and getting the middle two elements
     //ex [1, 3, 4, 5, 7, 8] and getting the two middle elements would be [4, 5]
-
+let veggies = ["cauliflower","peas","carrot","eggplant","brokly","pumpkin"];
+let twoVeggies = veggies.slice(4,5);
+console.log(twoVeggies);
  //9 create another array of 4 fruits
-    //create a fruits and veggies array and assign it to concatinating the veggies array above and the fruits array
-
+    //create a fruits and veggies array and assign it to concatinating the 
+    //veggies array above and the fruits array
+let fruitsArr = ["apple","blueberry","strawberry","banana"];
+let fruitsAndveggies = fruitsArr.concat(veggies)
+console.log(fruitsAndveggies);
  //10 get the index of one the fruits or veggies in your fruitsAndveggies array
+console.log(fruitsAndveggies.indexOf('blueberry'));
