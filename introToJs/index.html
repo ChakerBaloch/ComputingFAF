@@ -1,44 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.js"></script>
-    <title>Document</title>
+    <title>My Favorite Things</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!--This is just practice to get used-->
-    <h2>Demo JavaScript</h2>
-    <div>
-        <h2 id = "my-favorite"></h2>
-    </div>
+    <header>
+        <div class="content">
+            <h1>My Favorite Things</h1>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <h2>My most favorite thing today</h2>
+            <ul id="my-favorite">
+            </ul>
+            <h2>I have <span id="total"></span> things on my favorites list</h2>
 
-    <div>
-        <ul id = "my-list"></ul>
-    </div>
+            <h2>All of my favorite things</h2>
+            <ul id="all-favorites">
+            </ul>
 
-    <div>
-        <h2 id="array-practice"></h2>
-    </div>
-    
-<script>
-    let favoriteArr = ["cats","dogs","rats","squirral"];
+            <h2>My Favorite things plus my second favorites</h2>
+            <ul id="more-favorites">
+            </ul>
+            <h2>My Favorite things - plus one</h2>
+            <ul id="favorites-plus-one">
+            </ul>
+            <h2>My Favorite things - minus one</h2>
+            <ul id="favorites-minus-one">
+            </ul>
+            <h2>nested array</h2>
+            <ul id = "nested"></ul>
+            <h2>slicing the favorite array</h2>
+            <ul id="slice"></ul>
+            <h2>Shifting the frist element of the array</h2>
+            <ul id="shifting"></ul>
+            <h2>UnShifting </h2>
+            <ul id="un-shifting"></ul>
+        </div>
+    </main>
+    <script>
+        //Exercise 1 - create an array of your 6 favorite things
+        let favArray = ["Mac", "book", "bike","bed","car","headset"];
+       
 
-   // let myFavorite = document.getElementById('my-favorite');
-   // myFavorite.innerHTML = `<li>${favoriteArr[3]}</li>`;
-    
-    let myTotal = document.getElementById('my-favorite');
-    let total = favoriteArr.length;
-    myTotal.innerHTML = total;
+        //Exercise 2 - show your most favorite thing on the page
+        let myFavorite = document.getElementById('my-favorite');//selects the tag
+        myFavorite.innerHTML = `<li>${favArray[5]}</li>`;//adds content inside the tag
 
-    let petList = document.getElementById('my-list');
+        //Exercise 3 - change your favorite thing and show it on the page
+        favArray[5] = "camera";
+        myFavorite.innerHTML = `<li>${favArray[5]}</li>`;
 
-    function showArray(arr){
-        return "<li>"+arr+"</li>";
-    };
-    petList.innerHTML = showArray(favoriteArr);
+        //Exercise 4 - Use the length property to show the number of items in your array
+        let total = document.getElementById('total');
+        let numOfItem = favArray.length;
+        total.innerHTML = numOfItem;
 
-</script>
+        //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
+        let myList = document.getElementById('all-favorites');
+        function displayArray(array){
+           return `<li>${array}</li>`;
+        };
+        
+        myList.innerHTML = displayArray(favArray);
+
+
+        //Exercise 6 Concatenation of arrays
+        let more = document.getElementById('more-favorites');
+        myNewfavArray = ["Jacket","Umbrella","Airpods"];
+        let combinedArray = favArray.concat(myNewfavArray);
+        more.innerHTML = displayArray(combinedArray);
+
+        //Exercise 7 push a new item to your array
+        let pushed = document.getElementById('favorites-plus-one');
+        favArray.push("pencil");
+        pushed.innerHTML = displayArray(favArray);
+
+       //Exercise 8 push a new item to your array
+       
+        let popped = document.getElementById('favorites-minus-one');
+        favArray.pop();
+        popped.innerHTML = displayArray(favArray);
+
+        //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
+
+        //slice();
+        let sliced = document.getElementById('slice');
+        let slicing = favArray.slice(2, 4);
+        sliced.innerHTML = displayArray(slicing);
+
+        //shift();
+        let shifted = document.getElementById('shifting');
+        let shiftedArray = favArray.shift();
+        shifted.innerHTML = displayArray(shiftedArray);
+
+        //unshift();
+        let unShifted = document.getElementById('un-shifting');
+        let unShiftedArray = favArray.unshift('HP');
+        unShifted.innerHTML = displayArray(favArray);
+
+        favArray.forEach(function (item){
+            myList.innerHTML += `<li>${item}</li>`;
+        });
+        let nested = document.getElementById('nested');
+        let desert = [
+            "oranges", "apples",
+            ["pie", "tart"],
+            ["ice cream", "cake", "candy"],
+            ["soda", "cream"]
+        ]
+        desert.forEach(function (item){
+            nested.innerHTML += `<li>${item}</li>`;
+        });
+
+
+    </script>
+
 </body>
-</html> 
+
+</html>

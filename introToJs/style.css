@@ -1,0 +1,83 @@
+html,
+body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    Padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #c2ebf6;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+header {
+    background: url('img/hdr-bg.jpg') center center no-repeat;
+    background-size: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    width: fit-content;
+    background-color: rgba(194, 235, 246, 1);
+    padding: 20px 50px;
+    border-radius: 40px;
+    box-shadow: 0 0 20px #000;;
+}
+
+h2 {
+    margin: 50px auto 15px auto;
+}
+
+main {
+    border-top: solid 25px #000;
+    background-color: #e3d155;
+}
+
+.content {
+    margin: auto;
+    padding: 40px 0;
+    max-width: 1100px;
+}
+
+ul {
+    margin: 0px auto;
+    width: fit-content;
+    text-align: left;
+    list-style-position: inside;
+}
+
+
+li, #total, p {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgba(194, 235, 246, 1);
+    width: fit-content; 
+    border-radius: 15px;
+    box-shadow: 0 0 20px #666; 
+}
+
+#total {
+    border-radius: 0;
+    margin: auto;
+    width: fit-content;
+}
+
+li::marker {
+    padding-right: 30px;
+    content: "😁   "
+}
+
+li:hover::marker {
+    content: "🤯   ";
+}
