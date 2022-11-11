@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
     <title>Document</title>
 </head>
 <body>
+    <!--This is just practice to get used-->
+    <h2>Demo JavaScript</h2>
+    <div>
+        <h2 id = "my-favorite"></h2>
+    </div>
+
+    <div>
+        <ul id = "my-list"></ul>
+    </div>
+
+    <div>
+        <h2 id="array-practice"></h2>
+    </div>
     
+<script>
+    let favoriteArr = ["cats","dogs","rats","squirral"];
+
+   // let myFavorite = document.getElementById('my-favorite');
+   // myFavorite.innerHTML = `<li>${favoriteArr[3]}</li>`;
+    
+    let myTotal = document.getElementById('my-favorite');
+    let total = favoriteArr.length;
+    myTotal.innerHTML = total;
+
+    let petList = document.getElementById('my-list');
+
+    function showArray(arr){
+        return "<li>"+arr+"</li>";
+    };
+    petList.innerHTML = showArray(favoriteArr);
+
+</script>
 </body>
-</html>
+</html> 
